@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.5 on win32)" generated="2024-09-28T19:09:39.768067" rpa="false" schemaversion="5">
+<suite id="s1" name="Github" source="C:\Users\prave\PycharmProject\Github_login_Automation\github.robot">
+<kw name="Open Browser To GitHub" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-28T19:09:40.236544" level="INFO">Opening browser 'chrome' to base url 'https://github.com/login'.</msg>
+<arg>${GITHUB_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-28T19:09:40.236544" elapsed="4.477608"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-09-28T19:09:44.714152" elapsed="0.047437"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-09-28T19:09:44.761589" elapsed="0.003813"/>
+</kw>
+<status status="PASS" start="2024-09-28T19:09:40.236544" elapsed="4.528858"/>
+</kw>
+<test id="s1-t1" name="Login To GitHub" line="14">
+<kw name="Input Username">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=login_field</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-28T19:09:44.765402" elapsed="1.036167"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-28T19:09:45.801569" level="INFO">Typing text 'npc2425' into text field 'id=login_field'.</msg>
+<arg>id=login_field</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-28T19:09:45.801569" elapsed="1.688599"/>
+</kw>
+<status status="PASS" start="2024-09-28T19:09:44.765402" elapsed="2.724766"/>
+</kw>
+<kw name="Input Password">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-28T19:09:47.491196" elapsed="1.030987"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-28T19:09:48.522183" level="INFO">Typing text '2429@Praveen' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-28T19:09:48.522183" elapsed="1.709834"/>
+</kw>
+<status status="PASS" start="2024-09-28T19:09:47.491196" elapsed="2.740821"/>
+</kw>
+<kw name="Submit Credentials">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-28T19:09:50.233626" level="INFO">Clicking button 'name=commit'.</msg>
+<arg>name=commit</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-28T19:09:50.232521" elapsed="4.583920"/>
+</kw>
+<status status="PASS" start="2024-09-28T19:09:50.232521" elapsed="4.583920"/>
+</kw>
+<kw name="Verify Successful Login">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<msg time="2024-09-28T19:10:01.232575" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-28T19:10:01.232575" level="FAIL">Element 'xpath=//summary[@aria-label="View profile and more"]' did not appear in 5 seconds.</msg>
+<arg>xpath=//summary[@aria-label="View profile and more"]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="FAIL" start="2024-09-28T19:09:54.817463" elapsed="6.415112">Element 'xpath=//summary[@aria-label="View profile and more"]' did not appear in 5 seconds.</status>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<arg>xpath=//summary[@aria-label="View profile and more"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="NOT RUN" start="2024-09-28T19:10:01.232575" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Login Successful</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-09-28T19:10:01.232575" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-09-28T19:09:54.816441" elapsed="6.416134">Element 'xpath=//summary[@aria-label="View profile and more"]' did not appear in 5 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-09-28T19:09:44.765402" elapsed="16.467173">Element 'xpath=//summary[@aria-label="View profile and more"]' did not appear in 5 seconds.</status>
+</test>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-09-28T19:10:01.232575" elapsed="2.708191"/>
+</kw>
+<status status="FAIL" start="2024-09-28T19:09:39.768067" elapsed="24.172699"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Github">Github</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
